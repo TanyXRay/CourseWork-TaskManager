@@ -46,14 +46,15 @@ public class TodoServer {
     /**
      * Метод валидации данных по мапе
      *
-     * @param map
+     * @param map список из json строки
      */
     private void mapValidation(Map<String, String> map) {
         if (map.containsValue("ADD")) {
             todos.addTask(map.get("task"));
-
         } else if (map.containsValue("REMOVE")) {
             todos.removeTask(map.get("task"));
+        } else if (map.containsValue("RESTORE")) {
+            todos.removeTwoLastTask();
         } else {
             System.out.println("такой операции нет");
         }

@@ -3,9 +3,11 @@ package taskmanager;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Todos {
-    private List<String> taskList = new ArrayList<>();
+    private List<String> rawTaskList = new ArrayList<>();
+    private List<String> taskList;
 
     /**
      * Метод добавления задачи
@@ -14,10 +16,14 @@ public class Todos {
      */
     public void addTask(String task) {
         if (!task.isBlank()) {
-            taskList.add(task);
+            rawTaskList.add(task);
         } else {
             System.out.println("Невозможно добавить пустую задачу");
         }
+        taskList = rawTaskList.stream()
+                .limit(8)
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     /**
@@ -39,5 +45,12 @@ public class Todos {
     public String getAllTasks() {
         Collections.sort(taskList);
         return String.join(" ", taskList);
+    }
+
+    /**
+     * Метод удаления 2 последних задач
+     */
+    public void removeTwoLastTask() {
+       // TODO сделать функцию изъятия 2-х последних элементов из списка задач
     }
 }
