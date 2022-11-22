@@ -8,7 +8,8 @@ import java.net.Socket;
 
 /**
  * Класс-клиент, который соединяется с сервером и отправляет
- * ему строку-запрос в формате JSON
+ * ему строку-запрос в формате JSON,
+ * в которой описывается тип операции и наименование задачи
  */
 public class Client {
 
@@ -17,19 +18,20 @@ public class Client {
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
-            //out.println("{ \"type\": \"ADD\", \"task\": \"         \" }");
             //out.println("{ \"type\": \"ADD\", \"task\": \"Готовка\" }");
             //out.println("{ \"type\": \"ADD\", \"task\": \"Плаванье\" }");
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Акробатика\" }");
+            out.println("{ \"type\": \"ADD\", \"task\": \"Акробатика\" }");
+            //out.println("{ \"type\": \"ADD\", \"task\": \"\" }");
 
             //out.println("{ \"type\": \"RESTORE\" }");
 
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Лингвистика\" }");
             //out.println("{ \"type\": \"ADD\", \"task\": \"Магазин-покупки\" }");
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Учеба\" }");
+            // out.println("{ \"type\": \"ADD\", \"task\": \"Учеба\" }");
             //out.println("{ \"type\": \"ADD\", \"task\": \"Рыбалка\" }");
             //out.println("{ \"type\": \"ADD\", \"task\": \"Чтение\" }");
-            // out.println("{ \"type\": \"REMOVE\", \"task\": \"task #C\" }");
+            //out.println("{ \"type\": \"REMOVE\", \"task\": \"Лингвистика\" }");
+            //out.println("{ \"type\": \"REMOVE\", \"task\": \"Акробатика\" }");
+            //out.println("{ \"type\": \"REMOVE\", \"task\": \"Готовка\" }");
 
             System.out.println(in.readLine());
         } catch (IOException e) {
