@@ -31,9 +31,10 @@ public class Todos {
      * @param task
      */
     public void addTask(String task) {
+        int limit = 8;
         rawTaskList.add(task);
         taskList = rawTaskList.stream()
-                .limit(8)
+                .limit(limit)
                 .distinct()
                 .collect(Collectors.toList());
     }
@@ -48,6 +49,7 @@ public class Todos {
             System.out.print("\nудалять больше нечего");
         }
         taskList.remove(task);
+        setRawTaskList(taskList);
     }
 
     /**

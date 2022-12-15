@@ -82,7 +82,6 @@ public class TodoServer {
         int operationsIndex = operationsList.size() - 1;
         if (operationsList.get(operationsIndex).contains("ADD")) {
             todos.removeTask(tasksList.get(tasksIndex));
-
         } else if (operationsList.get(operationsIndex).contains("REMOVE")) {
             todos.addTask(tasksList.get(tasksIndex));
         }

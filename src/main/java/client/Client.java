@@ -19,16 +19,15 @@ public class Client {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
             //out.println("{ \"type\": \"ADD\", \"task\": \"Готовка\" }");
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Плаванье\" }");
-            out.println("{ \"type\": \"ADD\", \"task\": \"Акробатика\" }");
-            //out.println("{ \"type\": \"ADD\", \"task\": \"\" }");
+            out.println("{ \"type\": \"ADD\", \"task\": \"Плаванье\" }");
+            //out.println("{ \"type\": \"ADD\", \"task\": \"Акробатика\" }");
+            //out.println("{ \"type\": \"ADD\", \"task\": \"Магазин-покупки\" }");
+            //out.println("{ \"type\": \"ADD\", \"task\": \"Учеба\" }");
+            //out.println("{ \"type\": \"ADD\", \"task\": \"Рыбалка\" }");
 
             //out.println("{ \"type\": \"RESTORE\" }");
 
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Магазин-покупки\" }");
-            // out.println("{ \"type\": \"ADD\", \"task\": \"Учеба\" }");
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Рыбалка\" }");
-            //out.println("{ \"type\": \"ADD\", \"task\": \"Чтение\" }");
+            //out.println("{ \"type\": \"REMOVE\", \"task\": \"Чтение\" }");
             //out.println("{ \"type\": \"REMOVE\", \"task\": \"Лингвистика\" }");
             //out.println("{ \"type\": \"REMOVE\", \"task\": \"Акробатика\" }");
             //out.println("{ \"type\": \"REMOVE\", \"task\": \"Готовка\" }");
